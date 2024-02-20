@@ -27,7 +27,7 @@ const FileUpload = ({ values, setValues, setLoading }) => {
             // console.log(uri);
             axios
               .post(
-                `https://bananauyu.up.railway.app/api/uploadimages`,
+                `${process.env.REACT_APP_API}/uploadimages`,
                 { image: uri },
                 {
                   headers: {
@@ -60,7 +60,7 @@ const FileUpload = ({ values, setValues, setLoading }) => {
     // console.log("remove image", public_id);
     axios
       .post(
-        `https://bananauyu.up.railway.app/api/removeimage`,
+        `${process.env.REACT_APP_API}/removeimage`,
         { public_id },
         {
           headers: {

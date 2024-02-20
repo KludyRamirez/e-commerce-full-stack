@@ -19,9 +19,8 @@ const Register = ({ history }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    // console.log("ENV --->", process.env.REACT_APP_REGISTER_REDIRECT_URL);
     const config = {
-      url: "https://bananauyu.web.app/register/complete",
+      url: `${process.env.REACT_APP_REGISTER_REDIRECT_URL}/register/complete`,
       handleCodeInApp: true,
     };
 

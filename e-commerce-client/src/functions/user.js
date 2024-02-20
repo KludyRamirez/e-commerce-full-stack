@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const userCart = async (cart, authtoken) =>
   await axios.post(
-    `https://bananauyu.up.railway.app/api/user/cart`,
+    `${process.env.REACT_APP_API}/user/cart`,
     { cart },
     {
       headers: {
@@ -12,14 +12,14 @@ export const userCart = async (cart, authtoken) =>
   );
 
 export const getUserCart = async (authtoken) =>
-  await axios.get(`https://bananauyu.up.railway.app/api/user/cart`, {
+  await axios.get(`${process.env.REACT_APP_API}/user/cart`, {
     headers: {
       authtoken,
     },
   });
 
 export const emptyUserCart = async (authtoken) =>
-  await axios.delete(`https://bananauyu.up.railway.app/api/user/cart`, {
+  await axios.delete(`${process.env.REACT_APP_API}/user/cart`, {
     headers: {
       authtoken,
     },
@@ -27,7 +27,7 @@ export const emptyUserCart = async (authtoken) =>
 
 export const saveUserAddress = async (authtoken, address) =>
   await axios.post(
-    `https://bananauyu.up.railway.app/api/user/address`,
+    `${process.env.REACT_APP_API}/user/address`,
     { address },
     {
       headers: {
@@ -38,7 +38,7 @@ export const saveUserAddress = async (authtoken, address) =>
 
 export const saveUserCity = async (authtoken, city) =>
   await axios.post(
-    `https://bananauyu.up.railway.app/api/user/city`,
+    `${process.env.REACT_APP_API}/user/city`,
     { city },
     {
       headers: {
@@ -49,7 +49,7 @@ export const saveUserCity = async (authtoken, city) =>
 
 export const saveUserProvince = async (authtoken, province) =>
   await axios.post(
-    `https://bananauyu.up.railway.app/api/user/province`,
+    `${process.env.REACT_APP_API}/user/province`,
     { province },
     {
       headers: {
@@ -60,7 +60,7 @@ export const saveUserProvince = async (authtoken, province) =>
 
 export const saveUserPostalCode = async (authtoken, postalcode) =>
   await axios.post(
-    `https://bananauyu.up.railway.app/api/user/postalcode`,
+    `${process.env.REACT_APP_API}/user/postalcode`,
     { postalcode },
     {
       headers: {
@@ -71,7 +71,7 @@ export const saveUserPostalCode = async (authtoken, postalcode) =>
 
 export const saveUserContact = async (authtoken, contact) =>
   await axios.post(
-    `https://bananauyu.up.railway.app/api/user/contact`,
+    `${process.env.REACT_APP_API}/user/contact`,
     { contact },
     {
       headers: {
@@ -82,7 +82,7 @@ export const saveUserContact = async (authtoken, contact) =>
 
 export const applyCoupon = async (authtoken, coupon) =>
   await axios.post(
-    `https://bananauyu.up.railway.app/api/user/cart/coupon`,
+    `${process.env.REACT_APP_API}/user/cart/coupon`,
     { coupon },
     {
       headers: {
@@ -93,7 +93,7 @@ export const applyCoupon = async (authtoken, coupon) =>
 
 export const createOrder = async (stripeResponse, authtoken) =>
   await axios.post(
-    `https://bananauyu.up.railway.app/api/user/order`,
+    `${process.env.REACT_APP_API}/user/order`,
     { stripeResponse },
     {
       headers: {
@@ -103,14 +103,14 @@ export const createOrder = async (stripeResponse, authtoken) =>
   );
 
 export const getUserOrders = async (authtoken) =>
-  await axios.get(`https://bananauyu.up.railway.app/api/user/orders`, {
+  await axios.get(`${process.env.REACT_APP_API}/user/orders`, {
     headers: {
       authtoken,
     },
   });
 
 export const getWishlist = async (authtoken) =>
-  await axios.get(`https://bananauyu.up.railway.app/api/user/wishlist`, {
+  await axios.get(`${process.env.REACT_APP_API}/user/wishlist`, {
     headers: {
       authtoken,
     },
@@ -118,7 +118,7 @@ export const getWishlist = async (authtoken) =>
 
 export const removeWishlist = async (productId, authtoken) =>
   await axios.put(
-    `https://bananauyu.up.railway.app/api/user/wishlist/${productId}`,
+    `${process.env.REACT_APP_API}/user/wishlist/${productId}`,
     {},
     {
       headers: {
@@ -129,7 +129,7 @@ export const removeWishlist = async (productId, authtoken) =>
 
 export const addToWishlist = async (productId, authtoken) =>
   await axios.post(
-    `https://bananauyu.up.railway.app/api/user/wishlist`,
+    `${process.env.REACT_APP_API}/user/wishlist`,
     { productId },
     {
       headers: {
@@ -144,7 +144,7 @@ export const createCashOrderForUser = async (
   couponTrueOrFalse
 ) =>
   await axios.post(
-    `https://bananauyu.up.railway.app/api/user/cash-order`,
+    `${process.env.REACT_APP_API}/user/cash-order`,
     { couponApplied: couponTrueOrFalse, COD },
     {
       headers: {

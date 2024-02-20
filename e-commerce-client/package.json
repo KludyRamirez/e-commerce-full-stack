@@ -24,10 +24,10 @@
     "bootstrap": "^5.2.3",
     "firebase": "^9.6.7",
     "lodash": "^4.17.20",
-    "react": "^16.13.1",
+    "react": "^18.2.0",
     "react-bootstrap": "2.7.4",
     "react-datepicker": "^3.2.2",
-    "react-dom": "^16.13.1",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-image-file-resizer": "^0.3.7",
     "react-modal-image": "^2.5.0",
@@ -44,8 +44,8 @@
     "typewriter-effect": "^2.13.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
